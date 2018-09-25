@@ -6,7 +6,7 @@ Halo code test
 
 The following instructions will cover useful information to start the Halo Flask Application
 
-# In Case of Emergency (Issues with docker)
+# Creating Virtual Environment
 create a virtual envirionment using virtualenv
 
 * To install virtualenv use:
@@ -28,7 +28,7 @@ source venv/bin/activate
 - Navigate to working directory
 - run ```pip install -r requirements.txt```
 * To run the project
-- run ```python divvydose_api_1.py```
+- run ```python halo.py```
 
 # Testing
 In terms of testing the API:
