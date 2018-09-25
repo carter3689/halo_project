@@ -28,7 +28,7 @@ source venv/bin/activate
 - Navigate to working directory
 - run ```pip install -r requirements.txt```
 * To run the project
-- run ```python halo.py```
+- run ```python app.py```
 
 # Testing
 In terms of testing the API:
