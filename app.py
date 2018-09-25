@@ -5,7 +5,7 @@ import settings
 
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from flask import Flask, render_template,redirect, url_for,flash
+from flask import Flask, render_template,redirect, url_for,flash,request
 
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -27,8 +27,7 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-
-    if form.validate_on_submit():
+    if request.method == 'POST':
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if check_password_hash(user.password, form.password.data):
@@ -39,7 +38,7 @@ def login():
 
     return render_template('login.html', form=form)
 
-@app.route('/logout')
+@app.route('/logout',methods= ['GET','POST'])
 @login_required
 def logout():
     logout_user()
